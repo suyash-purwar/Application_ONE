@@ -1,5 +1,4 @@
 import os
-#import logging
 
 from employee import Employee
 from register import Register as reg
