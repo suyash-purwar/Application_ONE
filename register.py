@@ -7,7 +7,18 @@ class Register:
     def assign_id(cls, emp):
         cls.initial_id += 1
         emp.id = cls.initial_id
-
+        
+    @staticmethod
+    def countEmployees():
+        emp_count = 0
+        with open("employee.csv", "r", newline="") as emp_csv:
+            csv_reader = csv.DictReader(emp_csv)
+            
+            for emp_index in csv_reader:
+                emp_count += 1
+                
+            return emp_count
+            
     
     @classmethod
     def doesExist(cls, employee):

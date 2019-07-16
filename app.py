@@ -9,11 +9,12 @@ os.chdir(emp_data_folder)
 
 # Create employee
 emp1 = Employee("Alex", "Raymond", 27)
-emp2 = Employee("Maria", "Hirschi", 34)
+emp2 = Employee("Laura", "Hirschi", 34)
 emp3 = Employee("Henry", "Lamb", 41)
-
 
 reg.register(emp2)
 reg.register(emp3)
 reg.register(emp1)
 reg.register(Employee("Kelly", "Overton", 42))
+
+print(reg.countEmployees())
