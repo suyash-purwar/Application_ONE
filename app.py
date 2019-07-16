@@ -8,9 +8,12 @@ emp_data_folder = os.path.join(os.getcwd(), "employee_data")
 os.chdir(emp_data_folder)
 
 # Create employee
-new_employee_1 = Employee("Suyash", "Purwar", 16)
-new_employee_2 = Employee("Shubham", "Purwar", 21)
-new_employee_3 = Employee("Rashi", "Purwar", 15)
+emp1 = Employee("Alex", "Raymond", 27)
+emp2 = Employee("Maria", "Hirschi", 34)
+emp3 = Employee("Henry", "Lamb", 41)
 
-reg.register(new_employee_3)
-reg.register(new_employee_3)
+
+reg.register(emp2)
+reg.register(emp3)
+reg.register(emp1)
+reg.register(Employee("Kelly", "Overton", 42))

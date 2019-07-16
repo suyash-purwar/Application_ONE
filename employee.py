@@ -1,11 +1,12 @@
 class Employee():
     company = "Aeologic Technologies"
-    initial_id = 0
     
-    @classmethod
-    def assign_id(cls):
-        cls.initial_id += 1
-        return cls.initial_id
+    def hasID(self):
+        try:
+            if self.id:
+                return True
+        except:
+            return False
     
     @classmethod
     def get_org(cls):
@@ -15,7 +16,6 @@ class Employee():
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-        self.id = self.assign_id()
         
         # TODO: Implement logger
         
