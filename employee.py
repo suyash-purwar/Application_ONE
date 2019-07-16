@@ -1,3 +1,16 @@
+'''
+    Sole purpose of this class is to create employee objects
+    
+    These objects will be passed on the Register Class's registry method
+    
+    Register().register(Employee(first_name, last_name, age)) is responsible for saving employee's data
+    in the CSV file
+    
+    Regisrer class is responsible for adding 'id' property in the employee object
+'''
+    
+    
+
 class Employee():
     company = "Aeologic Technologies"
     
