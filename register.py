@@ -23,7 +23,6 @@ class Register:
     @classmethod
     def doesExist(cls, employee):
         if employee.hasID() == False:
-            print("Haan")
             cls.assign_id(employee)
         
         with open("employee.csv", "r") as emp_csv:
@@ -61,11 +60,9 @@ class Register:
                 csv_writer = csv.DictWriter(emp_csv, fieldnames=fieldname, delimiter=",")
                 csv_writer.writeheader()
                 csv_writer.writerow(employee.get_info())
-            print("Doesn't contain Header")
-            print("Employee is registered")
+
         else:
             if (cls.doesExist(employee) == False):
                 with open("employee.csv", "a", newline="") as emp_csv:
                     csv_writer = csv.DictWriter(emp_csv, fieldnames=fieldname)
                     csv_writer.writerow(employee.get_info())
-                print("Employee is registered")
