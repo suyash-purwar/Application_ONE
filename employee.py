@@ -34,15 +34,15 @@ class Employee():
         
     ''' Returns the information of the employee in the form of a dictionary '''
     def get_info(self):
+        ''' 
+            id property is not defined by the init function
+            This property will be added when the employee object
+            will be registered.
+            Register class is responsible for this action
+        '''
         return {
             "name": self.get_name(),
             "age": self.age,
-            ''' 
-                id property is not defined by the init function
-                This property will be added when the employee object
-                will be registered.
-                Register class is responsible for this action
-            '''
             "id": self.id
         }
         

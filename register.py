@@ -21,15 +21,15 @@ class Register:
             
     
     @classmethod
-    def doesExist(cls, employee):
-        if employee.hasID() == False:
-            cls.assign_id(employee)
+    def doesExist(cls, emp):
+        if emp.hasID() == False:
+            cls.assign_id(emp)
         
         with open("employee.csv", "r") as emp_csv:
             csv_reader = csv.DictReader(emp_csv)
             
             for line in csv_reader:
-                if int(line["id"]) == employee.id:
+                if int(line["id"]) == emp.id:
                     return True
                 
         return False
@@ -39,19 +39,17 @@ class Register:
         with open("employee.csv") as emp_csv: 
             read = csv.DictReader(emp_csv)
 
-            for line in read:
-                return True
+            for line in read: return True
 
             return False
         
     @classmethod
-    def register(cls, employee):
-        if employee.hasID() == False:
-           cls.assign_id(employee)
-            
+    def register(cls, emp):
         fieldname = ["name", "age", "id"]
+
+        if emp.hasID() == False: cls.assign_id(emp)
         
-        if employee.id == 1:
+        if emp.id == 1:
             with open("employee.csv", "w", newline="") as emp_csv:
                 csv_writer = csv.DictWriter(emp_csv, fieldnames=fieldname, delimiter=",")
         
@@ -59,10 +57,10 @@ class Register:
             with open("employee.csv", "w", newline="") as emp_csv:
                 csv_writer = csv.DictWriter(emp_csv, fieldnames=fieldname, delimiter=",")
                 csv_writer.writeheader()
-                csv_writer.writerow(employee.get_info())
+                csv_writer.writerow(emp.get_info())
 
         else:
-            if (cls.doesExist(employee) == False):
+            if (cls.doesExist(emp) == False):
                 with open("employee.csv", "a", newline="") as emp_csv:
                     csv_writer = csv.DictWriter(emp_csv, fieldnames=fieldname)
-                    csv_writer.writerow(employee.get_info())
+                    csv_writer.writerow(emp.get_info())
