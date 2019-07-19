@@ -22,7 +22,7 @@ class Register:
     
     @classmethod
     def doesExist(cls, emp):
-        if emp.hasID() == False:
+        if not emp.hasID():
             cls.assign_id(emp)
         
         with open("employee.csv", "r") as emp_csv:
@@ -47,7 +47,7 @@ class Register:
     def register(cls, emp):
         fieldname = ["name", "age", "id"]
 
-        if emp.hasID() == False: cls.assign_id(emp)
+        if not emp.hasID(): cls.assign_id(emp)
         
         if emp.id == 1:
             with open("employee.csv", "w", newline="") as emp_csv:

@@ -15,6 +15,6 @@ emp3 = Employee("Henry", "Lamb", 41)
 reg.register(emp2)
 reg.register(emp3)
 reg.register(emp1)
-reg.register(Employee("Kelly", "Overton", 42))
+reg.register(Employee("Kelly", "Purwar", 42))
 
 print(reg.countEmployees())
